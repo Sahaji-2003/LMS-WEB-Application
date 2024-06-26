@@ -10,7 +10,7 @@ function Admin_Dash() {
   
   return (
     <>
-       <main id="main" className="main" style={{ minHeight: '100vh', padding: '20px' }}>
+       <main id="main" className="main" style={{ minHeight: '100vh', padding: '20px'}}>
         
         <div className="pagetitle">
           <h1>Educator</h1>

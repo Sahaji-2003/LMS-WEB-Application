@@ -542,7 +542,7 @@ Answer Key Generation: Automatic generation of answer keys.
     </section>
     {/* End Cta Section */}
     {/* ======= Services Section ======= */}
-    <section id="services" className="services">
+    {/* <section id="services" className="services">
       <div className="container">
         <div className="section-title" data-aos="zoom-out">
           <h2>Services</h2>
@@ -658,7 +658,7 @@ Answer Key Generation: Automatic generation of answer keys.
           </div>
         </div>
       </div>
-    </section>
+    </section> */}
     <section id="contact" className="contact">
       <div className="container">
         <div className="section-title" data-aos="zoom-out">

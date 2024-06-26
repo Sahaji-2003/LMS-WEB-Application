@@ -86,7 +86,7 @@ const StudentSidebar = ({ isOpen, closeSidebar }) => {
         
         {/* <li className="nav-heading" style={{ padding: '10px', fontSize: '16px', fontWeight: 'bold' }}></li> */}
                 <li className="nav-item">
-          <Link to="/index-new-assign">
+          <Link to="">
             <a
               className="nav-link collapsed"
               style={navLinkStyle(activeItem === 'assign', hoveredItem === 'assign')}
@@ -129,7 +129,7 @@ const StudentSidebar = ({ isOpen, closeSidebar }) => {
         </li>
         
         <li className="nav-item">
-          <Link to="/PostForm">
+          <Link to="">
             <a
               className="nav-link collapsed"
               style={navLinkStyle(activeItem === 'machineType', hoveredItem === 'machineType')}

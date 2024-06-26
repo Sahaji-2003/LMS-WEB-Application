@@ -36,7 +36,7 @@ function IndexViewPaper() {
   };
 
   return (
-    <div className="app-container" style={{ backgroundColor: '#fcfbde', minHeight: '100vh', padding: '20px' }}>
+    <div className="app-container" style={{ backgroundColor: '#fffff', minHeight: '100vh', padding: '20px' }}>
       <StudentHeader toggleSidebar={toggleSidebar} user_id={globalState}  />
       <div className={`content ${isSidebarOpen && window.innerWidth > 991.98 ? 'content-shifted' : ''}`}>
         <StudentSidebar isOpen={isSidebarOpen} closeSidebar={toggleSidebar} />

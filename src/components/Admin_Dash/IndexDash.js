@@ -162,7 +162,7 @@ function IndexDash() {
   };
 
   return (
-    <div className="app-container" style={{ backgroundColor: '#f0f0dd', minHeight: '100vh', padding: '20px' }} >
+    <div className="app-container" style={{ backgroundColor: '#ffff', minHeight: '100vh', padding: '20px' }} >
       
       <Header toggleSidebar={toggleSidebar} user_id={globalState} />
       <div className={`content ${isSidebarOpen && window.innerWidth > 991.98 ? 'content-shifted' : ''}`}>
