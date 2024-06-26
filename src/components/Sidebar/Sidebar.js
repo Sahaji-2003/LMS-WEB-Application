@@ -357,7 +357,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
           </a>
         </li>
         <li className="nav-item">
-          <Link to="/PostForm">
+          <Link to="">
             <a
               className="nav-link collapsed"
               style={navLinkStyle(activeItem === 'machineType', hoveredItem === 'machineType')}
