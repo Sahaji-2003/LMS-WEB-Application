@@ -24,7 +24,7 @@ const EducatorPapersDisplay = ({ user_id, onBack }) => {
   }, [user_id]);
 
   if (loading) {
-    return <div>Loading...loading</div>;
+    return <div>Loading...</div>;
   }
 
   if (error) {
@@ -82,7 +82,7 @@ const EducatorPapersDisplay = ({ user_id, onBack }) => {
   return (
     <div>
       <button onClick={onBack}>Back</button>
-      <h2>Papers Assigned to Educator</h2>
+      <h2>Papers Assigned By The Educator</h2>
       <div style={containerStyle}>
         {papers.map((paper) => (
           <div 
@@ -91,7 +91,7 @@ const EducatorPapersDisplay = ({ user_id, onBack }) => {
             onMouseEnter={(e) => e.currentTarget.style.transform = cardHoverStyle.transform}
             onMouseLeave={(e) => e.currentTarget.style.transform = 'none'}
           >
-            <a href={`/create-paper/${paper._id}`}> 
+            <a href={`/view-paper/${paper._id}`}> 
             <div style={headerStyle}>
               <h3 style={headerTextStyle}>{paper.title}</h3>
             </div>

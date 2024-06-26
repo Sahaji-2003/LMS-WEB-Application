@@ -28,6 +28,7 @@ import IndexEducatorClassRoom from './components/EducatorClassRoom/IndexEducator
 import IndexStudentClassRoom from './students/StudentClassRoom/IndexStudentClassroom';
 import ShowStudentProfile from './students/StudentProfile/ShowStudentProfile';
 import StudentProfile from './students/StudentProfile/StudentProfile';
+import IndexViewPaper from './students/ViewPaper/IndexViewPaper';
 
 
 ReactDOM.render(
@@ -61,8 +62,9 @@ ReactDOM.render(
         <Route path="/StudentLogin" element={<StudentLogin/>} />
         <Route path="/StudentDash" element={<IndexStudentDash/>} />
         <Route path="/StudentHeader" element={<StudentHeader/>} />
-        <Route path="index-student-classroom" element={<IndexStudentClassRoom/>} />
-        <Route path="StudentProfile" element={<StudentProfile/>}/>
+        <Route path="/index-student-classroom" element={<IndexStudentClassRoom/>} />
+        <Route path="/StudentProfile" element={<StudentProfile/>}/>
+        <Route path="/view-paper/:paperId" element={<IndexViewPaper/>} />
       </Routes>
     </Router>
   </React.StrictMode>

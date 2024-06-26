@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import Header from '../../Header/Header';
+import Sidebar from '../../Sidebar/Sidebar';
 import axios from 'axios';
-import { useGlobalState } from '../../components/Constants/GlobalStateProvider';
+import { useGlobalState } from '../../Constants/GlobalStateProvider';
 import { useLocation } from 'react-router-dom';
-import { API_URL } from '../../components/Constants/Url';
-import StudentSidebar from '../Sidebar/StudentSidebar';
-import StudentHeader from '../Header/StudentHeader';
-import AddEducator from '../StudentClassRoom/AddEducator';
-import EducatorManagement from './EducatorManagement';
-import EventListDisplay from './EventListDisplay';
-function IndexStudentClassRoom() {
+import { API_URL } from '../../Constants/Url';
+import PapersList from '../../ListTable/PapersList';
+function IndexSavedPapers() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   useEffect(() => {
     // Function to handle sidebar visibility based on viewport width
@@ -71,23 +69,18 @@ function IndexStudentClassRoom() {
   return (
     <div className="app-container" style={{ backgroundColor: '#f0f0dd', minHeight: '100vh', padding: '20px' }} >
       
-      <StudentHeader toggleSidebar={toggleSidebar} user_id={globalState} />
+      <Header toggleSidebar={toggleSidebar} user_id={globalState} />
       <div className={`content ${isSidebarOpen && window.innerWidth > 991.98 ? 'content-shifted' : ''}`}>
         {/* <h2>{globalState}</h2> */}
-        <StudentSidebar isOpen={isSidebarOpen} closeSidebar={toggleSidebar} />
+        <Sidebar isOpen={isSidebarOpen} closeSidebar={toggleSidebar} />
+        <br/>
+        <br/>
+        <PapersList/>
 
-        {/* <AddEducator/> */}
-        
-        <section className="section dashboard">
-     
-        <EducatorManagement/>
-        <EventListDisplay user_id={globalState}/>
-        </section>
-        
       </div>
     </div>
   );
 }
 
-export default IndexStudentClassRoom;
+export default IndexSavedPapers;
 
