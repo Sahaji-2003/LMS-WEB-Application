@@ -23,8 +23,8 @@ const DownloadButtons = () => {
       <DropdownButton id="dropdown-basic-button" title="Download" style={styles.downloadButton}>
         <Dropdown.Item onClick={handleDownloadQuestionPaperPDF}>Download Question Paper (PDF)</Dropdown.Item>
         <Dropdown.Item onClick={handleDownloadQuestionPaperDOC}>Download Question Paper (DOC)</Dropdown.Item>
-        <Dropdown.Item onClick={handleDownloadAnswerKeyPDF}>Download Answer Key (PDF)</Dropdown.Item>
-        <Dropdown.Item onClick={handleDownloadAnswerKeyDOC}>Download Answer Key (DOC)</Dropdown.Item>
+        {/* <Dropdown.Item onClick={handleDownloadAnswerKeyPDF}>Download Answer Key (PDF)</Dropdown.Item> */}
+        {/* <Dropdown.Item onClick={handleDownloadAnswerKeyDOC}>Download Answer Key (DOC)</Dropdown.Item> */}
       </DropdownButton>
     </div>
   );

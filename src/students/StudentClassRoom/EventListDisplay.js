@@ -1,52 +1,3 @@
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-// import { API_URL } from '../../components/Constants/Url';
-// // import './EventListDisplay.css';  // Create this CSS file for styling
-
-// const EventListDisplay = ({ user_id }) => {
-//   const [educators, setEducators] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState(null);
-
-//   useEffect(() => {
-//     const fetchEducators = async () => {
-//       try {
-//         const response = await axios.get(`${API_URL}/api/student/${user_id}/educators`);
-//         setEducators(response.data.educators);
-//         setLoading(false);
-//       } catch (error) {
-//         setError('Error fetching educators');
-//         setLoading(false);
-//       }
-//     };
-
-//     fetchEducators();
-//   }, [user_id]);
-
-//   if (loading) {
-//     return <div>Loading...</div>;
-//   }
-
-//   if (error) {
-//     return <div>{error}</div>;
-//   }
-
-//   return (
-//     <div className="educator-list">
-//       {educators.map((educator) => (
-//         <div key={educator._id} className="educator-card">
-//           <h3>{educator.educator_name}</h3>
-//           <p>Institute: {educator.institute}</p>
-//           <p>Phone: {educator.educator_phone}</p>
-//           <p>Email: {educator.username}</p>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default EventListDisplay;
-
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -169,3 +120,5 @@ const EventListDisplay = ({ user_id }) => {
 };
 
 export default EventListDisplay;
+
+
