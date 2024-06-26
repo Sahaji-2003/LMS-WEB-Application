@@ -7,7 +7,7 @@ const StudentHeader = ({ toggleSidebar, user_id }) => {
   const [userInfo, setUserInfo] = useState(() => {
     const savedUserInfo = localStorage.getItem('userInfo');
     const cacheTimestamp = localStorage.getItem('userInfoTimestamp');
-    const isCacheValid = cacheTimestamp && (Date.now() - cacheTimestamp) < 300000; // Cache valid for 5 minutes
+    const isCacheValid = cacheTimestamp && (Date.now() - cacheTimestamp) < 1000; // Cache valid for 5 minutes
 
     return savedUserInfo && isCacheValid ? JSON.parse(savedUserInfo) : null;
   });

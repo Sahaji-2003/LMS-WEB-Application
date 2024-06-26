@@ -29,6 +29,7 @@ import IndexStudentClassRoom from './students/StudentClassRoom/IndexStudentClass
 import ShowStudentProfile from './students/StudentProfile/ShowStudentProfile';
 import StudentProfile from './students/StudentProfile/StudentProfile';
 import IndexViewPaper from './students/ViewPaper/IndexViewPaper';
+import IndexListEducators from './students/EducatorsList/IndexListEduactor';
 
 
 ReactDOM.render(
@@ -65,6 +66,7 @@ ReactDOM.render(
         <Route path="/index-student-classroom" element={<IndexStudentClassRoom/>} />
         <Route path="/StudentProfile" element={<StudentProfile/>}/>
         <Route path="/view-paper/:paperId" element={<IndexViewPaper/>} />
+        <Route path="/index-list-educators" element={<IndexListEducators/>} />
       </Routes>
     </Router>
   </React.StrictMode>

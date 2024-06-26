@@ -11,7 +11,7 @@ function StudentDataCards() {
 
           <div className="col-xxl-4 col-md-4">
             <div className="card info-card customers-card">
-              <Link to="/IndexCreatePaper">
+              <Link to="/index-student-classroom">
 
                 <div
                   className="card-body"
@@ -19,7 +19,7 @@ function StudentDataCards() {
                     padding: '20px',
                     position: 'relative',
                     overflow: 'hidden',
-                    backgroundImage: 'url("assets/img/datacard1bg.svg")',
+                    backgroundImage: 'url("assets/img/studentcard1bg.jpeg")',
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
@@ -35,9 +35,9 @@ function StudentDataCards() {
                   <div
                     style={{
                       position: 'absolute',
-                      top: '12px',
-                      left: '10px',
-                      right: '20px',
+                      top: '120px',
+                      left: '40px',
+                      // right: '40px',
                       padding: '2px',
                       width: '180px',
                       height: '40px',
@@ -49,7 +49,7 @@ function StudentDataCards() {
                     }}
                   >
                     <h5 className="card-title" style={{ fontWeight: 'bold', color: 'white', margin: '0', left: '200px' }}>
-                      Create Paper
+                      My Classrooms
                     </h5>
                   </div>
 
@@ -81,7 +81,7 @@ function StudentDataCards() {
 
           <div className="col-xxl-4 col-md-4">
             <div className="card info-card customers-card">
-              <Link to="/index-templates">
+              <Link to="/index-list-educators">
 
                 <div
                   className="card-body"
@@ -89,7 +89,7 @@ function StudentDataCards() {
                     padding: '20px',
                     position: 'relative',
                     overflow: 'hidden',
-                    backgroundImage: 'url("assets/img/datacard2bg.svg")',
+                    backgroundImage: 'url("assets/img/studentcardbg2.jpeg")',
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
@@ -105,8 +105,8 @@ function StudentDataCards() {
                   <div
                     style={{
                       position: 'absolute',
-                      top: '120px',
-                      left: '70px',
+                      top: '8px',
+                      left: '20px',
                       right: '20px',
                       padding: '2px',
                       width: '180px',
@@ -119,7 +119,7 @@ function StudentDataCards() {
                     }}
                   >
                     <h5 className="card-title" style={{ fontWeight: 'bold', color: 'white', margin: '0', left: '200px' }}>
-                      Templates
+                      Educators
                     </h5>
                   </div>
 
@@ -155,7 +155,7 @@ function StudentDataCards() {
                   padding: '20px',
                   position: 'relative',
                   overflow: 'hidden',
-                  backgroundImage: 'url("assets/img/datacard3bg.svg")',
+                  backgroundImage: 'url("assets/img/studentcardbg3.jpeg")',
                   backgroundRepeat: 'no-repeat',
                   backgroundPosition: 'center',
                   backgroundSize: 'cover',
@@ -171,7 +171,7 @@ function StudentDataCards() {
                 <div
                   style={{
                     position: 'absolute',
-                    top: '12px',
+                    top: '135px',
                     left: '10px',
                     right: '20px',
                     padding: '2px',
@@ -185,7 +185,7 @@ function StudentDataCards() {
                   }}
                 >
                   <h5 className="card-title" style={{ fontWeight: 'bold', color: 'white', margin: '0', left: '200px' }}>
-                    Themes
+                    Papers
                   </h5>
                 </div>
 

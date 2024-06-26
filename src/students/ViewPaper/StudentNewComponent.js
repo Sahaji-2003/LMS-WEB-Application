@@ -109,22 +109,12 @@ function StudentNewComponent({ paperId, selectedTemplate }) {
         </div>
       )}
       <div style={{ display: 'flex', flex: 1 }}>
-        <ResizableBox
-          width={300}
-          height={Infinity}
-          minConstraints={[200, Infinity]}
-          maxConstraints={[800, Infinity]}
-          axis="x"
-          resizeHandles={['e']}
-          style={{ display: 'flex', flexDirection: 'column', paddingRight: '10px', color: 'grey' }}
-        >
+      
           {/* <PaperForm onSubmit={handlePaperSubmit} onAddQuestion={handleAddQuestion} /> */}
-        </ResizableBox>
+      
         <div style={{ flex: 1, paddingLeft: '10px' ,paddingTop: '20px'}}>
           <PaperPreview
             paper={paper}
-            onEditQuestion={handleEditQuestion}
-            onDeleteQuestion={handleDeleteQuestion}
             onSaveQuestion={handleSaveQuestion}
             template={paper.template}
             backgroundColor={backgroundColor}

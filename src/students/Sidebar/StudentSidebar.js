@@ -70,7 +70,7 @@ const StudentSidebar = ({ isOpen, closeSidebar }) => {
         </li>
 
         <li className="nav-item">
-          <Link to="/index-saved-papers">
+          <Link to="/index-list-educators">
             <a
               className="nav-link collapsed"
               style={navLinkStyle(activeItem === 'users', hoveredItem === 'users')}

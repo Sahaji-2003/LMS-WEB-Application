@@ -7,6 +7,7 @@ import { useGlobalState } from '../../components/Constants/GlobalStateProvider';
 import StudentHeader from '../Header/StudentHeader';
 import StudentSidebar from '../Sidebar/StudentSidebar';
 import StudentNewComponent from './StudentNewComponent';
+import Header from '../../components/Header/Header';
 function IndexViewPaper() {
   const { getGlobal, setGlobal } = useGlobalState();
   const globalState = getGlobal();

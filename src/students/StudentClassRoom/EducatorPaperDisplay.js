@@ -91,7 +91,7 @@ const EducatorPapersDisplay = ({ user_id, onBack }) => {
             onMouseEnter={(e) => e.currentTarget.style.transform = cardHoverStyle.transform}
             onMouseLeave={(e) => e.currentTarget.style.transform = 'none'}
           >
-            <a href={`/view-paper/${paper._id}`}> 
+            <Link to={`/view-paper/${paper._id}`}> 
             <div style={headerStyle}>
               <h3 style={headerTextStyle}>{paper.title}</h3>
             </div>
@@ -106,7 +106,7 @@ const EducatorPapersDisplay = ({ user_id, onBack }) => {
                 <strong style={bodyStrongTextStyle}>Marks:</strong> {paper.marks}
               </p>
             </div>
-            </a>
+            </Link>
           </div>
         ))}
       </div>
