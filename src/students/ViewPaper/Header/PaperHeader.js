@@ -11,39 +11,37 @@ import Button from 'react-bootstrap/Button';
 const PaperHeader = ({ onTemplatesToggle, onColorChange, onTemplateChange, paper, paperId, duration }) => {
   const [showColorPicker, setShowColorPicker] = useState(false);
   const [backgroundColor, setBackgroundColor] = useState('#ffffff');
-  const [timeLeft, setTimeLeft] = useState(duration > 0 ? duration * 60 : 0); // duration in seconds
-  const [showModal, setShowModal] = useState(false);
-  const [modalMessage, setModalMessage] = useState('');
+  const [timeLeft, setTimeLeft] = useState(0); // Start with 0 seconds
+  const [showModal, setShowModal] = useState(true); // Show the initial modal
+  const [showEndModal, setShowEndModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState('Do you want to start the test?');
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (duration <= 0) {
-      setModalMessage('Invalid duration. Navigating to home.');
-      setShowModal(true);
-      return;
+    let timer;
+    if (timeLeft > 0) {
+      timer = setInterval(() => {
+        setTimeLeft((prevTime) => {
+          if (prevTime <= 1) {
+            clearInterval(timer);
+            setModalMessage('Paper has ended.');
+            setShowEndModal(true);
+            return 0;
+          }
+          return prevTime - 1;
+        });
+      }, 1000);
     }
-
-    const timer = setInterval(() => {
-      setTimeLeft((prevTime) => {
-        if (prevTime <= 1) {
-          clearInterval(timer);
-          setModalMessage('Paper has ended.');
-          setShowModal(true);
-          return 0;
-        }
-        return prevTime - 1;
-      });
-    }, 1000);
 
     return () => clearInterval(timer);
-  }, [duration]);
+  }, [timeLeft]);
 
   useEffect(() => {
-    if (timeLeft === 0) {
+    if (timeLeft === 0 && !showModal) {
       setModalMessage('Paper has ended.');
-      setShowModal(true);
+      setShowEndModal(true);
     }
-  }, [timeLeft]);
+  }, [timeLeft, showModal]);
 
   const handleColorChange = (color) => {
     setBackgroundColor(color.hex);
@@ -68,13 +66,18 @@ const PaperHeader = ({ onTemplatesToggle, onColorChange, onTemplateChange, paper
 
   const handleCloseModal = () => {
     setShowModal(false);
+    setTimeLeft(duration * 60); // Set the timer to the duration
+  };
+
+  const handleCloseEndModal = () => {
+    setShowEndModal(false);
     navigate(''); // Navigate to home page
   };
 
   const handleSubmitPaper = () => {
     // Logic for submitting the paper
     setModalMessage('Paper submitted successfully.');
-    setShowModal(true);
+    setShowEndModal(true);
   };
 
   const formatTime = (seconds) => {
@@ -117,6 +120,18 @@ const PaperHeader = ({ onTemplatesToggle, onColorChange, onTemplateChange, paper
 
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
+          <Modal.Title>Start Test</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{modalMessage}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleCloseModal}>
+            Start Test
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Modal show={showEndModal} onHide={handleCloseEndModal}>
+        <Modal.Header closeButton>
           <Modal.Title>Notification</Modal.Title>
         </Modal.Header>
         <Modal.Body>{modalMessage}</Modal.Body>
@@ -126,7 +141,7 @@ const PaperHeader = ({ onTemplatesToggle, onColorChange, onTemplateChange, paper
               Submit Paper
             </Button>
           )}
-          <Button variant="secondary" onClick={handleCloseModal}>
+          <Button variant="secondary" onClick={handleCloseEndModal}>
             Close
           </Button>
         </Modal.Footer>
@@ -230,6 +245,7 @@ const styles = {
 };
 
 export default PaperHeader;
+
 
 
 

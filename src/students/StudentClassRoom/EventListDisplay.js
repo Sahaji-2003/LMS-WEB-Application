@@ -1,3 +1,53 @@
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+// import { API_URL } from '../../components/Constants/Url';
+// // import './EventListDisplay.css';  // Create this CSS file for styling
+
+// const EventListDisplay = ({ user_id }) => {
+//   const [educators, setEducators] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
+
+//   useEffect(() => {
+//     const fetchEducators = async () => {
+//       try {
+//         const response = await axios.get(${API_URL}/api/student/${user_id}/educators);
+//         setEducators(response.data.educators);
+//         setLoading(false);
+//       } catch (error) {
+//         setError('Error fetching educators');
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchEducators();
+//   }, [user_id]);
+
+//   if (loading) {
+//     return <div>Loading...</div>;
+//   }
+
+//   if (error) {
+//     return <div>{error}</div>;
+//   }
+
+//   return (
+//     <div className="educator-list">
+//       {educators.map((educator) => (
+//         <div key={educator._id} className="educator-card">
+//           <h3>{educator.educator_name}</h3>
+//           <p>Institute: {educator.institute}</p>
+//           <p>Phone: {educator.educator_phone}</p>
+//           <p>Email: {educator.username}</p>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// };
+
+// export default EventListDisplay;
+
+
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -47,7 +97,7 @@ const EventListDisplay = ({ user_id }) => {
     flexWrap: 'wrap',
     gap: '16px',
     padding: '20px',
-    justifyContent: 'center',
+    justifyContent: 'left',
   };
 
   const cardStyle = {
@@ -59,6 +109,10 @@ const EventListDisplay = ({ user_id }) => {
     backgroundColor: '#fff',
     overflow: 'hidden',
     cursor: 'pointer',
+    backgroundImage: 'url("path/to/your/image.jpg")',  // Replace with your image path
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    color: '#fff', // Ensure text is readable
   };
 
   const cardHoverStyle = {
@@ -66,28 +120,31 @@ const EventListDisplay = ({ user_id }) => {
   };
 
   const headerStyle = {
-    backgroundColor: '#f5f5f5',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',  // Slightly transparent to show background image
     padding: '16px',
     textAlign: 'center',
     borderBottom: '1px solid #ddd',
+    borderRadius: '8px',
   };
 
   const headerTextStyle = {
     margin: 0,
-    color: '#333',
+    color: '#fff',
   };
 
   const bodyStyle = {
     padding: '16px',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',  // Slightly transparent to show background image
+    borderRadius: '8px',
   };
 
   const bodyTextStyle = {
     margin: '8px 0',
-    color: '#555',
+    color: '#fff',
   };
 
   const bodyStrongTextStyle = {
-    color: '#333',
+    color: '#fff',
   };
 
   return (
@@ -95,19 +152,31 @@ const EventListDisplay = ({ user_id }) => {
       {educators.map((educator) => (
         <div
           key={educator._id} 
-          style={cardStyle} 
+           style={{
+                    padding: '20px',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    backgroundImage: 'url("assets/img/headerbg.png")',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundColor: '#45ff54',
+                    color: '#ff771d',
+                    boxShadow: '0 5px 26px 0 rgba(68, 88, 144, 0.14)',
+                    border: '1px solid #fff',
+                    borderRadius: '8px',// Optional: add border-radius if needed
+                    height: '210px'
+
+                  }}
           onMouseEnter={(e) => e.currentTarget.style.transform = cardHoverStyle.transform}
           onClick={() => setSelectedEducator(educator)}
         >
           <div style={headerStyle}>
-            <h3 style={headerTextStyle}>{educator.educator_name}</h3>
+            <h3 style={headerTextStyle}>{educator.institute}</h3>
           </div>
           <div style={bodyStyle}>
             <p style={bodyTextStyle}>
-              <strong style={bodyStrongTextStyle}>Institute:</strong> {educator.institute}
-            </p>
-            <p style={bodyTextStyle}>
-              <strong style={bodyStrongTextStyle}>Phone:</strong> {educator.educator_phone}
+              <strong style={bodyStrongTextStyle}>Educator Name:</strong> {educator.educator_name}
             </p>
             <p style={bodyTextStyle}>
               <strong style={bodyStrongTextStyle}>Email:</strong> {educator.user_id}
@@ -120,5 +189,3 @@ const EventListDisplay = ({ user_id }) => {
 };
 
 export default EventListDisplay;
-
-
