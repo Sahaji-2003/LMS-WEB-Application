@@ -80,7 +80,7 @@ function IndexStudentClassRoom() {
         
         <section className="section dashboard">
      
-        <EducatorManagement/>
+        {/* <EducatorManagement/> */}
         <EventListDisplay user_id={globalState}/>
         </section>
         

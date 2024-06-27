@@ -1,6 +1,8 @@
 import React from 'react'
 import { useGlobalState } from '../../components/Constants/GlobalStateProvider';
 import StudentDataCards from '../DataCards/StudentDataCards';
+import EducatorList from '../StudentClassRoom/EducatorList';
+import ListOfEducator from '../EducatorsList/ListOfEducator';
 
 function Student_Dash() {
   const { getGlobal, setGlobal } = useGlobalState();
@@ -30,7 +32,7 @@ function Student_Dash() {
             
             {/* <UserTable /> */}
             {/* <PapersList userId={globalState}/> */}
-          
+           <ListOfEducator/>
 
           </div>
 

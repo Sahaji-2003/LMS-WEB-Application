@@ -6,6 +6,8 @@ import { API_URL } from '../../components/Constants/Url';
 import StudentSidebar from '../Sidebar/StudentSidebar';
 import StudentHeader from '../Header/StudentHeader';
 
+import EducatorManagement from '../StudentClassRoom/EducatorManagement';
+import EventListDisplay from '../StudentClassRoom/EventListDisplay';
 import ListOfEducator from './ListOfEducator';
 function IndexListEducators() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -79,8 +81,8 @@ function IndexListEducators() {
         
         <section className="section dashboard">
      
-        {/* <EducatorManagement/>
-        <EventListDisplay user_id={globalState}/> */}
+        <EducatorManagement/>
+        {/* <EventListDisplay user_id={globalState}/> */}
         <ListOfEducator/>
         </section>
         
