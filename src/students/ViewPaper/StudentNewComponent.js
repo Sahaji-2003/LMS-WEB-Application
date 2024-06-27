@@ -122,6 +122,7 @@ function StudentNewComponent({ paperId, selectedTemplate }) {
             onSaveQuestion={handleSaveQuestion}
             template={paper.template}
             backgroundColor={backgroundColor}
+            getmarks = {paper.marks}
           />
           <DownloadHandler paper={paper} template={paper.template} backgroundColor={backgroundColor} />
         </div>
