@@ -5,7 +5,15 @@ const QuestionOptions = ({ question, index, submitted, userAnswers, handleAnswer
   if (question.type === 'truefalse') {
     return (
       <div>
-        <label style={submitted && question.correctAnswer === 'true' ? styles.correct : {}}>
+        <label
+          style={
+            submitted && userAnswers[index] === 'true' && question.correctAnswer === 'true'
+              ? styles.correct
+              : submitted && userAnswers[index] === 'true' && question.correctAnswer !== 'true'
+              ? styles.incorrect
+              : {}
+          }
+        >
           <input
             type="radio"
             name={`question-${index}`}
@@ -15,7 +23,15 @@ const QuestionOptions = ({ question, index, submitted, userAnswers, handleAnswer
           />
           True
         </label>
-        <label style={submitted && question.correctAnswer === 'false' ? styles.correct : {}}>
+        <label
+          style={
+            submitted && userAnswers[index] === 'false' && question.correctAnswer === 'false'
+              ? styles.correct
+              : submitted && userAnswers[index] === 'false' && question.correctAnswer !== 'false'
+              ? styles.incorrect
+              : {}
+          }
+        >
           <input
             type="radio"
             name={`question-${index}`}
@@ -31,7 +47,16 @@ const QuestionOptions = ({ question, index, submitted, userAnswers, handleAnswer
     return (
       <ul style={styles.noBullets}>
         {question.options.map((option, optIndex) => (
-          <li key={optIndex} style={submitted && option.isCorrect ? styles.correct : {}}>
+          <li
+            key={optIndex}
+            style={
+              submitted && userAnswers[index] === option.text && option.isCorrect
+                ? styles.correct
+                : submitted && userAnswers[index] === option.text && !option.isCorrect
+                ? styles.incorrect
+                : {}
+            }
+          >
             <label>
               <input
                 type="radio"
@@ -50,13 +75,15 @@ const QuestionOptions = ({ question, index, submitted, userAnswers, handleAnswer
     return (
       <ul style={styles.noBullets}>
         {question.options.map((option, optIndex) => {
+          const isCorrect =
+            submitted && userAnswers[index] && userAnswers[index].includes(option.text) && option.isCorrect;
           const isIncorrect =
-            submitted &&
-            userAnswers[index] &&
-            userAnswers[index].includes(option.text) &&
-            !option.isCorrect;
+            submitted && userAnswers[index] && userAnswers[index].includes(option.text) && !option.isCorrect;
           return (
-            <li key={optIndex} style={isIncorrect ? styles.incorrect : styles.correct}>
+            <li
+              key={optIndex}
+              style={isCorrect ? styles.correct : isIncorrect ? styles.incorrect : {}}
+            >
               <label>
                 <input
                   type="checkbox"
@@ -99,11 +126,15 @@ const styles = {
     backgroundColor: '#d4edda',
     borderColor: '#c3e6cb',
     color: '#155724',
+    padding: '5px',
+    borderRadius: '5px',
   },
   incorrect: {
     backgroundColor: '#f8d7da',
     borderColor: '#f5c6cb',
     color: '#721c24',
+    padding: '5px',
+    borderRadius: '5px',
   },
 };
 

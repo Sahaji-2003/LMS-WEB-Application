@@ -65,7 +65,7 @@ ReactDOM.render(
         <Route path="/StudentHeader" element={<StudentHeader/>} />
         <Route path="/index-student-classroom" element={<IndexStudentClassRoom/>} />
         <Route path="/StudentProfile" element={<StudentProfile/>}/>
-        <Route path="/view-paper/:paperId" element={<IndexViewPaper/>} />
+        <Route path="/Test-Paper-View" element={<IndexViewPaper/>} />
         <Route path="/index-list-educators" element={<IndexListEducators/>} />
       </Routes>
     </Router>

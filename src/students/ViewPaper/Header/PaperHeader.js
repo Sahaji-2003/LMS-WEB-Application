@@ -70,14 +70,16 @@ const PaperHeader = ({ onTemplatesToggle, onColorChange, onTemplateChange, paper
   };
 
   const handleCloseEndModal = () => {
+    navigate('/StudentDash');
     setShowEndModal(false);
-    navigate(''); // Navigate to home page
+     // Navigate to home page
   };
 
   const handleSubmitPaper = () => {
     // Logic for submitting the paper
     setModalMessage('Paper submitted successfully.');
     setShowEndModal(true);
+    navigate('/StudentDash'); 
   };
 
   const formatTime = (seconds) => {
@@ -118,7 +120,7 @@ const PaperHeader = ({ onTemplatesToggle, onColorChange, onTemplateChange, paper
         </div>
       </header>
 
-      <Modal show={showModal} onHide={handleCloseModal}>
+      <Modal show={showModal} onHide={handleCloseEndModal}>
         <Modal.Header closeButton>
           <Modal.Title>Start Test</Modal.Title>
         </Modal.Header>
@@ -126,6 +128,9 @@ const PaperHeader = ({ onTemplatesToggle, onColorChange, onTemplateChange, paper
         <Modal.Footer>
           <Button variant="primary" onClick={handleCloseModal}>
             Start Test
+          </Button>
+          <Button variant="primary" onClick={handleCloseEndModal}>
+            Leave Test
           </Button>
         </Modal.Footer>
       </Modal>

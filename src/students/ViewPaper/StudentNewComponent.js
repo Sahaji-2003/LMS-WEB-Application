@@ -6,6 +6,7 @@ import DownloadHandler from './Download/DownloadHandler';
 import TemplateSelector from './Template/TemplateSelector';
 import { API_URL } from '../../components/Constants/Url';
 import 'react-resizable/css/styles.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { templates } from './Template/Template';
 import { ResizableBox } from 'react-resizable';
 

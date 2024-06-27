@@ -451,16 +451,23 @@ const PaperPreview = ({ paper, onSaveQuestion, template, backgroundColor, getmar
     paper.questions.forEach((question, index) => {
       if (question.type === 'multiple') {
         const correctOptions = question.options.filter(option => option.isCorrect).map(option => option.text);
-        if (JSON.stringify(userAnswers[index]) === JSON.stringify(correctOptions)) {
-          marks += question.marks;
+        const userOptions = userAnswers[index] || [];
+        if (JSON.stringify(userOptions.sort()) === JSON.stringify(correctOptions.sort())) {
+          marks += getmarks;
         }
-      } else if (userAnswers[index] === question.correctAnswer) {
-        marks += question.marks;
+      } else {
+        const correctAnswer = question.type === 'single' 
+          ? question.options.find(option => option.isCorrect).text 
+          : question.correctAnswer;
+        
+        if (userAnswers[index] === correctAnswer) {
+          marks += getmarks;
+        }
       }
     });
     setTotalMarks(marks);
     setSubmitted(true);
-    getmarks(marks);
+    // getmarks(marks);
   };
 
   const handleEditClick = (index) => {
@@ -486,7 +493,7 @@ const PaperPreview = ({ paper, onSaveQuestion, template, backgroundColor, getmar
   };
 
   return (
-    <div style={{ ...styles.container, backgroundColor }}>
+    <div style={{ ...styles.paperPreview, backgroundImage: `url(${template})`, backgroundColor }}>
       <h2 style={styles.heading}>{paper.title}</h2>
       <p style={styles.description}>{paper.description}</p>
       {paper.questions.map((question, index) => (
@@ -498,33 +505,16 @@ const PaperPreview = ({ paper, onSaveQuestion, template, backgroundColor, getmar
             userAnswers={userAnswers}
             handleAnswerChange={handleAnswerChange}
           />
-          {user_id === paper.user_id && (
-            <button
-              style={styles.editButton}
-              onClick={() => handleEditClick(index)}
-            >
-              Edit
-            </button>
-          )}
         </div>
       ))}
       {submitted ? (
         <p style={styles.result}>
-          You have scored {totalMarks} marks out of {paper.totalMarks}.
+          You have scored {totalMarks} marks
         </p>
       ) : (
         <button style={styles.submitButton} onClick={handleSubmit}>
           Submit
         </button>
-      )}
-      {editingIndex !== null && (
-        <EditForm
-          editingIndex={editingIndex}
-          editedQuestion={editedQuestion}
-          handleInputChange={handleInputChange}
-          handleOptionChange={handleOptionChange}
-          handleSaveClick={handleSaveClick}
-        />
       )}
     </div>
   );
@@ -535,14 +525,14 @@ PaperPreview.propTypes = {
   onSaveQuestion: PropTypes.func.isRequired,
   template: PropTypes.string.isRequired,
   backgroundColor: PropTypes.string.isRequired,
-  getmarks: PropTypes.func.isRequired,
+  getmarks: PropTypes.number.isRequired,
 };
 
 const styles = {
-  container: {
+  paperPreview: {
     padding: '20px',
-    borderRadius: '10px',
-    backgroundColor: '#f5f5f5',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
   },
   heading: {
     textAlign: 'center',

@@ -3,6 +3,7 @@ import React from 'react';
 const EducatorList = ({ educator, onSelectEducator }) => {
   return (
     <div>
+      
       <h2>Educator Details</h2>
       {educator ? (
         <div 

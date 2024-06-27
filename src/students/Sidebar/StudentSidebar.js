@@ -64,7 +64,7 @@ const StudentSidebar = ({ isOpen, closeSidebar }) => {
               onMouseLeave={() => setHoveredItem(null)}
             >
               <i className="bi bi-layout-text-window-reverse" style={iconStyle} />
-              <span>Class Rooms</span>
+              <span>My Classrooms</span>
             </a>
           </Link>
         </li>
@@ -100,7 +100,7 @@ const StudentSidebar = ({ isOpen, closeSidebar }) => {
           </Link>
         </li>
 
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <a
             className="nav-link collapsed"
             style={navLinkStyle(activeItem === 'contact', hoveredItem === 'contact')}
@@ -111,7 +111,7 @@ const StudentSidebar = ({ isOpen, closeSidebar }) => {
             <i className="bi bi-envelope" style={iconStyle} />
             <span>Submited</span>
           </a>
-        </li>
+        </li> */}
         
         <li className="nav-item">
           <Link to="/StudentProfile">
@@ -128,7 +128,7 @@ const StudentSidebar = ({ isOpen, closeSidebar }) => {
           </Link>
         </li>
         
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <Link to="">
             <a
               className="nav-link collapsed"
@@ -141,7 +141,7 @@ const StudentSidebar = ({ isOpen, closeSidebar }) => {
               <span>Downloads</span>
             </a>
           </Link>
-        </li>
+        </li> */}
         <li className="nav-item">
           <Link to="/">
             <a
@@ -162,6 +162,3 @@ const StudentSidebar = ({ isOpen, closeSidebar }) => {
 };
 
 export default StudentSidebar;
-
-
-

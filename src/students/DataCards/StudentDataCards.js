@@ -314,7 +314,7 @@ function StudentDataCards() {
                     }}
                   >
                     <h5 className="card-title" style={{ fontWeight: 'bold', color: 'white', margin: '0' }}>
-                      Educators
+                      Add Educator
                     </h5>
                   </div>
                 </div>
