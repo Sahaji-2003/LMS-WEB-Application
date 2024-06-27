@@ -287,7 +287,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
           </Link>
         </li>
 
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <Link to="/index-educator-classroom">
             <a
               className="nav-link collapsed"
@@ -298,6 +298,20 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
             >
               <i className="bi bi-people" style={iconStyle} />
               <span>Class Rooms</span>
+            </a>
+          </Link>
+        </li> */}
+        <li className="nav-item">
+          <Link to="/index-new-assign">
+            <a
+              className="nav-link collapsed"
+              style={navLinkStyle(activeItem === 'assign', hoveredItem === 'assign')}
+              onClick={() => setActiveItem('assign')}
+              onMouseEnter={() => setHoveredItem('assign')}
+              onMouseLeave={() => setHoveredItem(null)}
+            >
+              <i className="bi bi-card-list" style={iconStyle} />
+              <span>Assign Papers</span>
             </a>
           </Link>
         </li>
@@ -316,20 +330,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
           </Link>
         </li>
         {/* <li className="nav-heading" style={{ padding: '10px', fontSize: '16px', fontWeight: 'bold' }}></li> */}
-                <li className="nav-item">
-          <Link to="/index-new-assign">
-            <a
-              className="nav-link collapsed"
-              style={navLinkStyle(activeItem === 'assign', hoveredItem === 'assign')}
-              onClick={() => setActiveItem('assign')}
-              onMouseEnter={() => setHoveredItem('assign')}
-              onMouseLeave={() => setHoveredItem(null)}
-            >
-              <i className="bi bi-card-list" style={iconStyle} />
-              <span>Assign Papers</span>
-            </a>
-          </Link>
-        </li>
+          
         <li className="nav-item">
           <Link to="/AdminProfile">
             <a
@@ -344,7 +345,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
             </a>
           </Link>
         </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <a
             className="nav-link collapsed"
             style={navLinkStyle(activeItem === 'contact', hoveredItem === 'contact')}
@@ -355,7 +356,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
             <i className="bi bi-envelope" style={iconStyle} />
             <span>Uploads</span>
           </a>
-        </li>
+        </li> */}
         <li className="nav-item">
           <Link to="">
             <a
