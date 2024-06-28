@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { API_URL } from '../../components/Constants/Url';
-
+import { Link } from 'react-router-dom';
 
 const StudentHeader = ({ toggleSidebar, user_id }) => {
   const [userInfo, setUserInfo] = useState(() => {
@@ -170,39 +170,50 @@ const StudentHeader = ({ toggleSidebar, user_id }) => {
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
+               <Link to={"/StudentProfile"}>
                 <li>
                   <a className="dropdown-item d-flex align-items-center" href="#">
                     <i className="bi bi-person" />
                     <span>My Profile</span>
                   </a>
                 </li>
+                </Link>
+
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
+
                 <li>
                   <a className="dropdown-item d-flex align-items-center" href="#">
                     <i className="bi bi-gear" />
                     <span>Account Settings</span>
                   </a>
                 </li>
+
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
+            
+               <Link to={"/StudentDash"}>
                 <li>
                   <a className="dropdown-item d-flex align-items-center" href="#">
                     <i className="bi bi-question-circle" />
                     <span>Need Help?</span>
                   </a>
                 </li>
+                </Link>
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
+                <Link to={"/"}>
                 <li>
                   <a className="dropdown-item d-flex align-items-center" href="#">
                     <i className="bi bi-box-arrow-right" />
                     <span>Sign Out</span>
                   </a>
                 </li>
+                </Link>
+
               </ul>
             </li>
           )}
