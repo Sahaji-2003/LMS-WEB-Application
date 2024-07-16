@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# 📚 MCQ Paper Designer LMS WebApp with Online Assessment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+MCQ Paper Designer LMS WebApp is a comprehensive Learning Management System designed to streamline the creation, management, and online assessment of Multiple Choice Question (MCQ) papers. This platform offers educators an intuitive interface to design, organize, and customize MCQ papers, with options to preview and download them in various formats. Additionally, it features online assessments, allowing students to attempt papers online with a timer and receive automatic evaluations and marks upon submission.
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+### 🔐 User Authentication and Roles
+- **User Registration and Authentication**: Secure user registration and login.
+- **Roles and Permissions**: Defined roles for Admin, Educator, and Student, each with specific permissions.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### ✏️ MCQ Paper Creation
+- **User-Friendly Interface**: Intuitive UI for educators to create and design MCQ papers.
+- **Question Management**: Add, edit, and delete questions, supporting single answer, multiple answers, and true/false question types.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🌐 Online Assessment
+- **Classroom Joining**: Students can join classrooms created by educators.
+- **Paper Assignment**: Educators can assign papers to students with specific codes.
+- **Timed Assessments**: Students attempt papers online with a specified timer.
+- **Automatic Evaluation**: Immediate evaluation and marking upon submission of papers.
+- **Result Display**: Students receive their marks instantly after submitting the paper.
 
-### `npm test`
+### 👀 Preview and Download
+- **Preview Feature**: Educators can preview the paper before finalizing it.
+- **Download Options**: Download MCQ papers in multiple formats (PDF, DOCX).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🎨 Templates and Themes
+- **Pre-designed Templates**: Ready-to-use templates and themes for creating visually appealing papers.
+- **Customization**: Templates can be customized to meet specific requirements.
 
-### `npm run build`
+### 📊 Analytics and Reporting
+- **Usage Tracking**: Track and report the usage of designed papers for better insights.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠 Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Frontend**: React.js for a responsive and dynamic user interface.
+- **Backend**: Node.js and Express.js for server-side logic and API development.
+- **Database**: MongoDB for flexible and scalable data storage.
+- **Document Generation**: PDFKit or similar libraries for generating downloadable paper formats.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Installation
 
-### `npm run eject`
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Sahaji-2003/mcq-paper-designer-lms.git
+   cd mcq-paper-designer-lms
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
